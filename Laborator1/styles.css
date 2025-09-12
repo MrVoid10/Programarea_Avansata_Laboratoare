@@ -10,9 +10,7 @@ body {
   line-height: 1.6;
 }
 
-/* ===================== */
-/* NAVIGATION            */
-/* ===================== */
+/* NAVIGATION */
 nav {
   background: #1f1f1f;
   position: fixed;
@@ -78,9 +76,7 @@ nav .container {
   width: 100%;
 }
 
-/* ===================== */
-/* HOME SECTION          */
-/* ===================== */
+/* HOME SECTION */
 #home {
   text-align: center;
   padding: 100px 20px 60px;
@@ -107,9 +103,7 @@ nav .container {
   box-shadow: 0 0 15px rgba(3,218,198,0.6);
 }
 
-/* ===================== */
-/* ABOUT ME SECTION      */
-/* ===================== */
+/* ABOUT ME SECTION */
 #about_me {
   background: #1f1f1f;
   margin: 40px auto;
@@ -131,9 +125,7 @@ nav .container {
   text-align: justify;
 }
 
-/* ===================== */
-/* PORTFOLIO SECTION     */
-/* ===================== */
+/* PORTFOLIO SECTION */
 #portfolio {
   background: #1f1f1f;
   margin: 40px auto;
@@ -173,8 +165,7 @@ nav .container {
   transform: translateX(5px);
 }
 
-/*footer*/
-
+/* footer */
 footer {
   background: linear-gradient(90deg, #1f1f1f, #222, #1f1f1f);
   text-align: center;
@@ -241,4 +232,103 @@ footer {
   color: #aaa;
   padding-top: 10px;
   border-top: 1px solid #444;
+}
+
+/* skills */
+#skills {
+  background: #1f1f1f;
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+}
+
+#skills h2 {
+  color: #03dac6;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.skill-bars p {
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+.bar {
+  background: #2a2a2a;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #bb86fc, #03dac6);
+  width: 0;
+  border-radius: 20px;
+  transition: width 1.5s ease-in-out;
+}
+
+/*Slideshow*/
+#Certificates {
+  padding: 100px 20px 60px;
+  background: #121212;
+  display: flex;
+  justify-content: center;
+}
+
+#Certificates h1 {
+  font-size: 2.5rem;
+  color: #bb86fc;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.certificates-container {
+  width: 80%;
+  max-width: 1000px;
+  background: #1f1f1f;
+  border-bottom: 2px solid #333;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+  border-radius: 8px; 
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Links */
+a {
+  color: #bb86fc;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+a:hover {
+  color: #03dac6;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(45deg, #bb86fc, #03dac6);
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
 }

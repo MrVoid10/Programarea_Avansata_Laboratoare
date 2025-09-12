@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personal Portfolio</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="CSS/SlideShow.css">
 </head>
 <body>
 
@@ -15,6 +16,7 @@
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about_me">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -25,8 +27,7 @@
   <section id="home">
     <h1>Hello, I'm Baban Adrian</h1>
     <p>Aspiring web developer and technology enthusiast.</p>
-    <!-- Added profile image -->
-    <img src="img/profile.jpg" alt="My Photo" style="max-width:200px; border-radius:50%; margin-top:15px;">
+    <img src="img/profile.jpg" alt="My Photo" style="max-width:300px; border-radius:50%; margin-top:15px;">
   </section>
 
   <!-- About Me Section -->
@@ -39,20 +40,51 @@
       back-end development with HTML, CSS, JavaScript, and Python (Flask).
     </p>
   </section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill-bars">
+      <p>C/C++</p>
+      <div class="bar"><div class="progress" style="width: 85%"></div></div>
+
+      <p>SQL / Databases</p>
+      <div class="bar"><div class="progress" style="width: 75%"></div></div>
+
+      <p>Python / Flask</p>
+      <div class="bar"><div class="progress" style="width: 65%"></div></div>
+
+      <p>JavaScript</p>
+      <div class="bar"><div class="progress" style="width: 45%"></div></div>
+
+      <p>HTML / CSS</p>
+      <div class="bar"><div class="progress" style="width: 40%"></div></div>
+    </div>
+  </section>
 
   <!-- Portfolio Section -->
   <section id="portfolio">
     <h2>Portfolio</h2>
     <p>Here are a few projects I have worked on:</p>
     <ul>
-      <li><strong>Personal Blog:</strong> A simple blog platform where users can share articles.</li>
+      <li><strong><a href="https://github.com/MrVoid10/Programarea_Avansata_Laboratoare/tree/main/Laborator1">Personal Blog</a>:</strong> A simple blog platform where users can share articles.</li>
       <li><strong>Online Store Mockup:</strong> Product listing page with a shopping cart layout.</li>
-      <li><strong>School Management System:</strong> Web app for managing students, grades, and teachers.</li>
-      <li><strong>Databases Management System:</strong> A REST API for accessing databases.</li>
-      <li><strong>Git Clone System:</strong> A simple clone of git (CLI only).</li>
+      <li><strong><a href="https://github.com/MrVoid10/Practica/blob/main/Client_Curier.c">Shop Management System</a>:</strong> Console app for managing clients and couriers.</li>
+      <li><strong><a href="https://github.com/MrVoid10/REST_API_Adina">Databases Management System</a>:</strong> A REST API for accessing databases.</li>
+      <li><strong><a href="https://github.com/MrVoid10/OOP_Catalin-BABAN_ADRIAN-">Git Clone System</a>:</strong> A simple clone of git (CLI only).</li>
     </ul>
   </section>
 
+  <section id="Certificates">
+    <div class="certificates-container">
+      <h1>Certificates</h1>
+      <div class="slideshow-container">
+        <span class="prev" onclick="prevImage()">&#10094;</span>
+        <img id="currentImage" src="" alt="Slideshow Image" width="100%">
+        <span class="next" onclick="nextImage()">&#10095;</span>
+        <div class="dots"></div>
+      </div>
+    </div>
+  </section>
+  
   <!-- Footer -->
   <footer>
     <div class="footer-container">
@@ -72,5 +104,6 @@
     </div>
     <p class="footer-bottom">&copy; 2025 Baban Adrian. All rights reserved.</p>
   </footer>
+  <script src="JS/SlideShow,js"></script>
 </body>
 </html>
