@@ -1,0 +1,79 @@
+.login-container {
+  width: 320px;
+  margin: 5rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  backdrop-filter: blur(8px);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 0.7rem;
+  margin: 0.6rem 0;
+  border: none;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  outline: none;
+  transition: background 0.3s;
+}
+
+input::placeholder {
+  color: #ccc;
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-login,
+.btn-signup {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-login {
+  background: #2a5298;
+  color: white;
+}
+
+.btn-login:hover {
+  background: #1e3c72;
+}
+
+.btn-signup {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  margin-top: 0.6rem;
+}
+
+.btn-signup:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.message {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #ffdf6c;
+}
+
+.signup-link {
+  margin-top: 1.2rem;
+}

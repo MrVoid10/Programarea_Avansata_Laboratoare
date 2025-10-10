@@ -1,0 +1,23 @@
+<footer>
+  <nav class="footer-links">
+    <a *ngFor="let link of legaturi" [routerLink]="link.url">{{ link.label }}</a>
+  </nav>
+
+  <section class="footer-contact">
+    <p>Email: <a [href]="'mailto:' + contact.email">{{ contact.email }}</a></p>
+    <p>
+      Telefon: <span (click)="copyToClipboard(contact.telefon)" style="cursor: pointer; text-decoration: underline;">{{ contact.telefon }}</span>
+    </p>
+  </section>
+
+  <!-- Container pentru toate imaginile -->
+  <section class="footer-social">
+    <div class="social-container">
+      <a *ngFor="let s of social" [href]="s.url" target="_blank" rel="noopener">
+        <img [src]="s.icon" [alt]="s.alt">
+      </a>
+    </div>
+  </section>
+
+  <p class="footer-bottom">&copy; {{ anulCurent }} Pagina Responsivă - Toate drepturile rezervate</p>
+</footer>

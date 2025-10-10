@@ -1,0 +1,151 @@
+/* ================= Navbar ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0 2rem;
+  background: var(--navbar-gradient);
+  color: var(--navbar-text);
+  transition: background 0.5s, color 0.3s;
+
+  a,
+  .btn,
+  .username {
+    color: var(--navbar-text);
+    transition: color 0.3s;
+  }
+
+  .logo-img {
+    height: 60px;
+    width: auto;
+    margin-right: 10px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  /* ---------- Link-uri desktop ca butoane ---------- */
+  .nav-links.desktop {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a.btn {
+      position: relative;
+      display: inline-block;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: clamp(18px, 2vw, 28px);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: var(--btn-bg);
+      color: var(--btn-text);
+      transition: background-color 0.3s, color 0.3s, opacity 0.2s;
+
+      &:hover {
+        background-color: var(--btn-hover);
+        color: #000;
+
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        height: 3px;
+        width: 0%;
+        background-color: var(--btn-hover);
+        transition: width 0.75s ease;
+      }
+    }
+  }
+
+  /* ---------- Zona butoane desktop ---------- */
+  .nav-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    .btn {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      background-color: var(--btn-bg);
+      color: var(--btn-text);
+      transition: background-color 0.3s, color 0.3s, opacity 0.2s;
+
+      &:hover {
+        background-color: var(--btn-hover);
+        color: #000;
+      }
+    }
+
+    /* Toggle theme ca buton */
+    .theme-toggle.btn {
+      font-size: 1.3rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--btn-hover);
+      }
+
+      .username {
+        font-weight: 600;
+        color: var(--navbar-text);
+      }
+    }
+  }
+}
+
+/* ---------- Responsivitate ---------- */
+@media (max-width: 768px) {
+  .nav-links.desktop {
+    gap: 1rem;
+
+    a.btn {
+      font-size: 1rem;
+      padding: 0.4rem 0.8rem;
+    }
+  }
+
+  .logo-img {
+    height: 50px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .nav-links a.btn {
+    font-size: 35px;
+  }
+
+  .nav-buttons .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 20px;
+  }
+
+  .logo-img {
+    height: 70px;
+  }
+}

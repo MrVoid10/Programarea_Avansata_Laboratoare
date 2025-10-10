@@ -1,0 +1,61 @@
+/* ================= Global Variables ================= */
+:root {
+  color-scheme: light dark;
+
+  /* Background și text principal */
+  --bg-light: #f8f8f8;
+  --bg-dark: #1e1e1e;
+  --text-light: hsl(0, 0%, 96%);
+  --text-dark: #111;
+
+  /* Navbar portocaliu constant */
+  --navbar-gradient: linear-gradient(90deg, #ff6f00, #ffb347);
+  --navbar-text: #ffffff;
+
+  /* Butoane */
+  --btn-bg: #00cfff;
+  --btn-text: #ffffff;
+  --btn-hover: #ffd54f;
+
+  /* Footer */
+  --footer-bg: var(--bg-light);
+  --footer-text: var(--text-dark);
+  --footer-link: var(--text-dark);
+  --footer-link-hover: var(--btn-hover);
+
+  /* Tranziții */
+  --transition-bg: 0.5s;
+  --transition-color: 0.3s;
+}
+
+/* ================= Dark Mode Global ================= */
+body.dark-mode {
+  --bg-light: #1e1e1e;
+  --bg-dark: #1e1e1e;
+  --text-light: #ffffff;
+  --text-dark: #f0f0f0;
+
+  /* Navbar rămâne portocaliu */
+  --navbar-gradient: linear-gradient(90deg, #ff6f00, #ffb347);
+  --navbar-text: #ffffff;
+
+  /* Butoane */
+  --btn-bg: #00cfff;
+  --btn-text: #ffffff;
+  --btn-hover: #ffd54f;
+
+  /* Footer */
+  --footer-bg: var(--bg-dark);
+  --footer-text: var(--text-light);
+  --footer-link: var(--text-light);
+  --footer-link-hover: var(--btn-hover);
+}
+
+/* ================= Body Global ================= */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background-color var(--transition-bg), color var(--transition-color);
+}

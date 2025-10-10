@@ -1,0 +1,39 @@
+<nav class="navbar">
+  <!-- Logo -->
+  <div class="logo">
+    <a routerLink="/">
+      <img src="assets/images/logo.png" alt="Hotel Logo" class="logo-img">
+    </a>
+  </div>
+
+  <!-- Link-uri desktop ca butoane -->
+  <ul class="nav-links desktop">
+    <li><a routerLink="/" class="btn">Acasă</a></li>
+    <li><a routerLink="/camere" class="btn">Camere</a></li>
+    <li><a routerLink="/servicii" class="btn">Servicii</a></li>
+    <li><a routerLink="/galerie" class="btn">Galerie</a></li>
+    <li><a routerLink="/contact" class="btn">Contact</a></li>
+  </ul>
+
+  <!-- Zona utilizator -->
+  <div class="nav-buttons">
+    <!-- Toggle theme -->
+    <button class="btn theme-toggle" (click)="toggleTheme()">
+      {{ darkMode ? '🌙' : '☀️' }}
+    </button>
+
+    <!-- Dacă utilizatorul NU e logat -->
+    <ng-container *ngIf="!user; else loggedIn">
+      <a routerLink="/login" class="btn login">Autentificare</a>
+    </ng-container>
+
+    <!-- Dacă utilizatorul ESTE logat -->
+    <ng-template #loggedIn>
+      <div class="user-info">
+        <img [src]="user.avatar || 'assets/images/Default_Avatar.png'" alt="Avatar" class="avatar">
+        <span class="username">{{ user.name }}</span>
+        <button class="btn logout" (click)="logout()">Logout</button>
+      </div>
+    </ng-template>
+  </div>
+</nav>

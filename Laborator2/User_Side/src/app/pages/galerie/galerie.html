@@ -1,0 +1,19 @@
+<div class="slideshow-container">
+
+  <div class="slide-descriere">
+    {{ slides[currentIndex].descriere }}
+  </div>
+
+  <img [src]="slides[currentIndex].src" alt="Slide" class="slide-img">
+
+  <button class="prev" (click)="prev()">&#10094;</button>
+  <button class="next" (click)="next()">&#10095;</button>
+
+  <div class="slide-indicators">
+    <span *ngFor="let slide of slides; let i = index"
+          [class.active]="i === currentIndex"
+          (click)="goToSlide(i)">
+    </span>
+  </div>
+
+</div>

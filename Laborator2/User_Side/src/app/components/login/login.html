@@ -1,0 +1,15 @@
+<div class="login-container">
+  <h2>Autentificare</h2>
+
+  <input type="text" placeholder="Username" [(ngModel)]="username" />
+  <input type="password" placeholder="Parolă" [(ngModel)]="password" />
+
+  <button class="btn-login" (click)="login()">Autentificare</button>
+
+  <p class="message">{{ message }}</p>
+
+  <div class="signup-link">
+    <p>Nu ai cont?</p>
+    <button class="btn-signup" (click)="goToSignup()">Înregistrare</button>
+  </div>
+</div>

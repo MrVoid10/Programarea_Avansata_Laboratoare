@@ -1,0 +1,22 @@
+<div *ngIf="camera" class="camera-detalii">
+  <div class="camera-img-container">
+    <img [src]="camera.imagine" [alt]="camera.nume" class="imagine-principala">
+  </div>
+
+  <h2>{{ camera.nume }}</h2>
+  <p class="pret">{{ camera.pret }} {{ camera.moneda }}</p>
+  <p class="descriere">{{ camera.descriere }}</p>
+
+  <button class="btn rezervare" (click)="faRezervare()">Rezervă acum</button>
+
+  <h3>Camere disponibile:</h3>
+  <ul>
+    <li *ngFor="let c of camera.camereDisponibile"
+        [class.ocupata]="!c.libera"
+        [class.libera]="c.libera"
+        [class.selected]="c.id === selectedCameraId"
+        (click)="selectCamera(c)">
+      {{ c.id }} — {{ c.libera ? 'Liberă' : 'Ocupată' }}
+    </li>
+  </ul>
+</div>

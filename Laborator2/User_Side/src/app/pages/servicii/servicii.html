@@ -1,0 +1,18 @@
+<!-- servicii.html -->
+<div class="servicii-container">
+  <h2>Serviciile noastre</h2>
+  <p>Oferim o gamă variată de facilități și servicii pentru o experiență de neuitat.</p>
+  
+  <div class="servicii-grid">
+    <div class="serviciu-card" *ngFor="let s of servicii">
+      <div class="serviciu-img-container">
+        <img [src]="s.icon" alt="{{ s.nume }}" class="serviciu-img">
+      </div>
+      <div class="serviciu-info">
+        <h3>{{ s.nume }}</h3>
+        <p>{{ s.descriere }}</p>
+      </div>
+    </div>
+  </div>
+  <p>Aceste servicii se pot folosi la locurile specificate sau trebuie de contactat receptia.</p>
+</div>

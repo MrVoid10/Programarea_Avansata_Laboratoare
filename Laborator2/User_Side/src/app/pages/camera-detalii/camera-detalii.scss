@@ -1,0 +1,195 @@
+.camera-detalii {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+
+  body.dark-mode & {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+  }
+
+  .camera-img-container {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+
+    img.imagine-principala {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+      transition: transform 0.4s ease;
+    }
+
+    img.imagine-principala:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .pret {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--accent-color, #0078d4);
+    margin-bottom: 1rem;
+
+    body.dark-mode & {
+      color: var(--accent-color-dark, #66aaff);
+    }
+  }
+
+  .descriere {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    color: inherit;
+  }
+
+  .btn.rezervare {
+    background-color: var(--accent-color, #0078d4);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.2s;
+
+    &:hover {
+      background-color: var(--accent-color-hover, #005fa3);
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    body.dark-mode & {
+      background-color: var(--accent-color-dark, #66aaff);
+
+      &:hover {
+        background-color: var(--accent-color-hover-dark, #5599e6);
+      }
+    }
+  }
+
+  h3 {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid currentColor;
+    display: inline-block;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin: 0.5rem 0;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: background-color 0.3s, transform 0.2s, border 0.2s;
+
+      &.libera {
+        background-color: rgba(76, 175, 80, 0.15);
+        color: #2e7d32;
+        border-left: 4px solid #4caf50;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.03);
+          background-color: rgba(76, 175, 80, 0.25);
+        }
+      }
+
+      &.ocupata {
+        background-color: rgba(244, 67, 54, 0.15);
+        color: #c62828;
+        border-left: 4px solid #f44336;
+        cursor: not-allowed;
+      }
+
+      &.selectata {
+        border: 2px solid var(--accent-color, #0078d4);
+        background-color: rgba(0, 120, 212, 0.15);
+      }
+
+      body.dark-mode &.libera {
+        background-color: rgba(76, 175, 80, 0.2);
+        color: #81c784;
+      }
+
+      body.dark-mode &.ocupata {
+        background-color: rgba(244, 67, 54, 0.2);
+        color: #ef9a9a;
+      }
+
+      body.dark-mode &.selectata {
+        border-color: var(--accent-color-dark, #66aaff);
+        background-color: rgba(102, 170, 255, 0.2);
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 1rem;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .pret {
+      font-size: 1.1rem;
+    }
+
+    .btn.rezervare {
+      width: 100%;
+    }
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+li.libera {
+  background-color: #dfffe0;
+  color: #065f08;
+  border: 1px solid #2cb32c;
+}
+
+li.ocupata {
+  background-color: #ffdede;
+  color: #8a0000;
+  border: 1px solid #c72a2a;
+}
+
+li.selectata {
+  border: 2px solid #0078d4;
+  background-color: rgba(0, 120, 212, 0.15);
+}

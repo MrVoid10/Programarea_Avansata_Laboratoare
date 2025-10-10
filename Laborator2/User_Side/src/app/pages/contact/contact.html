@@ -1,0 +1,23 @@
+<div class="contact-container">
+  <h2>Contactați-ne</h2>
+  <p class="descriere">
+    Dacă aveți întrebări, sugestii sau doriți mai multe informații despre camerele și serviciile noastre,
+    nu ezitați să ne contactați. Echipa noastră vă va răspunde cât mai curând posibil.
+  </p>
+
+  <div class="info-contact">
+    <p><strong>Adresă:</strong> Str. Independenței 12, Chișinău, Republica Moldova</p>
+    <p><strong>Telefon:</strong> +373 600 123 456</p>
+    <p><strong>Email:</strong> contact@novaplatinumhotel.md</p>
+  </div>
+
+  <h3>Trimiteți-ne un mesaj</h3>
+  <form (ngSubmit)="trimiteMesaj()" class="contact-form">
+    <input type="text" placeholder="Numele dvs." [(ngModel)]="name" name="name">
+    <input type="email" placeholder="Adresa de email" [(ngModel)]="email" name="email">
+    <textarea rows="5" placeholder="Mesajul dvs." [(ngModel)]="message" name="message"></textarea>
+    <button type="submit" class="btn-trimite">Trimite</button>
+  </form>
+
+  <p class="status-msg" *ngIf="statusMsg">{{ statusMsg }}</p>
+</div>

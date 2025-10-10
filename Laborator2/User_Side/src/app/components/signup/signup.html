@@ -1,0 +1,15 @@
+<div class="signup-container">
+  <h2>Creare Cont</h2>
+
+  <form (ngSubmit)="signup()" class="signup-form">
+    <input type="text" placeholder="Nume complet" [(ngModel)]="name" name="name" required>
+    <input type="text" placeholder="Nume utilizator" [(ngModel)]="username" name="username" required>
+    <input type="email" placeholder="Email" [(ngModel)]="email" name="email" required>
+    <input type="password" placeholder="Parolă" [(ngModel)]="password" name="password" required>
+    <input type="password" placeholder="Confirmare parolă" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+
+    <button type="submit" class="btn-creare">Creează cont</button>
+  </form>
+
+  <p class="message" *ngIf="message">{{ message }}</p>
+</div>
