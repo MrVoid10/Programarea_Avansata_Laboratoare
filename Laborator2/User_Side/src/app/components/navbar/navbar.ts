@@ -44,11 +44,13 @@ export class NavbarComponent implements OnInit {
 
   applyTheme() {
     if (this.darkMode) {
-      document.body.style.backgroundColor = 'var(--bg-dark)';
-      document.body.style.color = 'var(--text-light)';
+      // document.body.style.backgroundColor = 'var(--bg-dark)';
+      // document.body.style.color = 'var(--text-light)';
+      document.body.classList.add('dark-mode');
     } else {
-      document.body.style.backgroundColor = 'var(--bg-light)';
-      document.body.style.color = 'var(--text-dark)';
+            document.body.classList.remove('dark-mode');
+      // document.body.style.backgroundColor = 'var(--bg-light)';
+      // document.body.style.color = 'var(--text-dark)';
     }
   }
 

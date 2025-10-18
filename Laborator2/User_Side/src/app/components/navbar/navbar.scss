@@ -5,28 +5,24 @@
   align-items: center;
   height: 70px;
   padding: 0 2rem;
-  background: var(--navbar-gradient);
+  background: var(--navbar-bg);
   color: var(--navbar-text);
-  transition: background 0.5s, color 0.3s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.5s, color 0.3s, box-shadow 0.3s;
 
-  a,
-  .btn,
-  .username {
-    color: var(--navbar-text);
-    transition: color 0.3s;
-  }
-
+  /* ---------- Logo ---------- */
   .logo-img {
     height: 60px;
     width: auto;
     margin-right: 10px;
-    background-color: #fff;
+    background-color: var(--bg-light);
     padding: 5px;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius);
+    box-shadow: var(--card-shadow);
+    transition: background-color 0.3s, box-shadow 0.3s;
   }
 
-  /* ---------- Link-uri desktop ca butoane ---------- */
+  /* ---------- Link-uri principale ---------- */
   .nav-links.desktop {
     display: flex;
     gap: 2rem;
@@ -39,37 +35,43 @@
       display: inline-block;
       font-weight: 500;
       text-decoration: none;
-      font-size: clamp(18px, 2vw, 28px);
+      font-size: clamp(1rem, 2vw, 1.4rem);
       padding: 0.5rem 1rem;
-      border-radius: 8px;
+      border-radius: var(--btn-radius);
       cursor: pointer;
       background-color: var(--btn-bg);
       color: var(--btn-text);
-      transition: background-color 0.3s, color 0.3s, opacity 0.2s;
+      box-shadow: var(--card-shadow);
+      transition: background-color var(--btn-transition), color var(--btn-transition), transform 0.2s;
 
       &:hover {
         background-color: var(--btn-hover);
         color: #000;
+        transform: translateY(-2px);
+      }
 
-        &::after {
-          width: 100%;
-        }
+      &:active {
+        transform: translateY(0);
       }
 
       &::after {
         content: '';
         position: absolute;
         left: 0;
-        bottom: -5px;
+        bottom: -4px;
         height: 3px;
         width: 0%;
         background-color: var(--btn-hover);
-        transition: width 0.75s ease;
+        transition: width 0.5s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
       }
     }
   }
 
-  /* ---------- Zona butoane desktop ---------- */
+  /* ---------- Zona de butoane (dreapta) ---------- */
   .nav-buttons {
     display: flex;
     gap: 1rem;
@@ -78,12 +80,84 @@
     .btn {
       padding: 0.5rem 1rem;
       border: none;
-      border-radius: 8px;
-      font-weight: bold;
+      border-radius: var(--btn-radius);
+      font-weight: 600;
       cursor: pointer;
       background-color: var(--btn-bg);
       color: var(--btn-text);
-      transition: background-color 0.3s, color 0.3s, opacity 0.2s;
+      box-shadow: var(--card-shadow);
+      transition: background-color var(--btn-transition), color var(--btn-transition), transform 0.2s;
+
+      &:hover {
+        background-color: var(--btn-hover);
+        color: #000;
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+
+    /* ---------- Butonul de temă ---------- */
+    .theme-toggle.btn {
+      font-size: 1.4rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 50%;
+      background-color: var(--btn-bg);
+      transition: background-color 0.3s, transform 0.3s;
+
+      &:hover {
+        background-color: var(--btn-hover);
+        transform: rotate(20deg);
+      }
+    }
+
+    /* ---------- Info utilizator ---------- */
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+
+      .avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--btn-hover);
+        transition: border-color 0.3s, transform 0.2s;
+
+        &:hover {
+          transform: scale(1.05);
+          border-color: var(--color-accent);
+        }
+      }
+
+      .username {
+        font-weight: 600;
+        color: var(--navbar-text);
+        transition: color 0.3s;
+
+        body.dark-mode & {
+          color: var(--text-light);
+        }
+      }
+    }
+  }
+
+  /* ---------- Light/Dark Adaptare ---------- */
+  body.dark-mode & {
+    background: var(--navbar-bg);
+    color: var(--navbar-text);
+
+    .logo-img {
+      background-color: var(--bg-dark);
+      box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-links a.btn {
+      background-color: var(--btn-bg);
+      color: var(--btn-text);
 
       &:hover {
         background-color: var(--btn-hover);
@@ -91,29 +165,13 @@
       }
     }
 
-    /* Toggle theme ca buton */
-    .theme-toggle.btn {
-      font-size: 1.3rem;
-      padding: 0.5rem 0.75rem;
-      border-radius: 6px;
-    }
+    .nav-buttons .btn {
+      background-color: var(--btn-bg);
+      color: var(--btn-text);
 
-    .user-info {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-
-      .avatar {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid var(--btn-hover);
-      }
-
-      .username {
-        font-weight: 600;
-        color: var(--navbar-text);
+      &:hover {
+        background-color: var(--btn-hover);
+        color: #000;
       }
     }
   }
@@ -121,31 +179,50 @@
 
 /* ---------- Responsivitate ---------- */
 @media (max-width: 768px) {
-  .nav-links.desktop {
-    gap: 1rem;
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 1rem;
 
-    a.btn {
-      font-size: 1rem;
-      padding: 0.4rem 0.8rem;
+    .logo-img {
+      height: 50px;
+      margin-bottom: 0.5rem;
     }
-  }
 
-  .logo-img {
-    height: 50px;
+    .nav-links.desktop {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+
+      a.btn {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+      }
+    }
+
+    .nav-buttons {
+      justify-content: center;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
   }
 }
 
 @media (min-width: 1920px) {
-  .nav-links a.btn {
-    font-size: 35px;
-  }
+  .navbar {
+    padding: 0 4rem;
 
-  .nav-buttons .btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 20px;
-  }
+    .nav-links a.btn {
+      font-size: 1.6rem;
+    }
 
-  .logo-img {
-    height: 70px;
+    .nav-buttons .btn {
+      padding: 0.75rem 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    .logo-img {
+      height: 70px;
+    }
   }
 }

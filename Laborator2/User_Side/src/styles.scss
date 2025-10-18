@@ -1,61 +1,178 @@
-/* ================= Global Variables ================= */
+/* ==========================================================
+   GLOBAL ROOT VARIABLES + BASE STYLES
+   ========================================================== */
+
+/* ----------------- SCHEME ROOT ----------------- */
 :root {
   color-scheme: light dark;
 
-  /* Background și text principal */
+  /* ---------- Background & Text ---------- */
   --bg-light: #f8f8f8;
   --bg-dark: #1e1e1e;
   --text-light: hsl(0, 0%, 96%);
   --text-dark: #111;
+  --text-muted: #666;
+  --text-inverse: #ffffff;
 
-  /* Navbar portocaliu constant */
+  /* ---------- Accent Colors ---------- */
+  --color-primary: #00cfff;
+  --color-primary-hover: #ffd54f;
+  --color-accent: #ff6f00;
+  --color-accent-gradient: linear-gradient(90deg, #ff6f00, #ffb347);
+
+  /* ---------- Navbar ---------- */
+  --navbar-bg: var(--color-accent-gradient);
   --navbar-gradient: linear-gradient(90deg, #ff6f00, #ffb347);
   --navbar-text: #ffffff;
 
-  /* Butoane */
-  --btn-bg: #00cfff;
-  --btn-text: #ffffff;
-  --btn-hover: #ffd54f;
-
-  /* Footer */
+  /* ---------- Footer ---------- */
   --footer-bg: var(--bg-light);
   --footer-text: var(--text-dark);
   --footer-link: var(--text-dark);
-  --footer-link-hover: var(--btn-hover);
+  --footer-link-hover: var(--color-primary-hover);
 
-  /* Tranziții */
+  /* ---------- Buttons ---------- */
+  --btn-bg: var(--color-primary);
+  --btn-text: #ffffff;
+  --btn-hover: var(--color-primary-hover);
+  --btn-radius: 8px;
+  --btn-transition: 0.3s ease;
+
+  /* ---------- Cards ---------- */
+  --card-bg: #f0f0f0;
+  --card-border: #ccc;
+  --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+  /* ---------- Layout ---------- */
+  --max-width-container: 120px;
+  --radius: 12px;
+
+  /* ---------- Transitions ---------- */
   --transition-bg: 0.5s;
   --transition-color: 0.3s;
 }
 
-/* ================= Dark Mode Global ================= */
+/* ==========================================================
+   DARK MODE OVERRIDES
+   ========================================================== */
 body.dark-mode {
   --bg-light: #1e1e1e;
-  --bg-dark: #1e1e1e;
+  --bg-dark: #121212;
   --text-light: #ffffff;
-  --text-dark: #f0f0f0;
+  --text-dark: #eaeaea;
+  --text-muted: #aaa;
 
-  /* Navbar rămâne portocaliu */
-  --navbar-gradient: linear-gradient(90deg, #ff6f00, #ffb347);
-  --navbar-text: #ffffff;
+  --card-bg: #2a2a2a;
+  --card-border: #444;
+  --card-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
 
-  /* Butoane */
-  --btn-bg: #00cfff;
-  --btn-text: #ffffff;
-  --btn-hover: #ffd54f;
-
-  /* Footer */
   --footer-bg: var(--bg-dark);
   --footer-text: var(--text-light);
   --footer-link: var(--text-light);
-  --footer-link-hover: var(--btn-hover);
+  --footer-link-hover: var(--color-primary-hover);
+
+  --navbar-bg: linear-gradient(90deg, #d36d00, #ff9e00);
 }
 
-/* ================= Body Global ================= */
+/* ==========================================================
+   GLOBAL BASE STYLES
+   ========================================================== */
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
   background-color: var(--bg-light);
-  color: var(--text-light);
-  transition: background-color var(--transition-bg), color var(--transition-color);
+  color: var(--text-dark);
+  transition: background-color var(--transition-bg),
+              color var(--transition-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  color: var(--text-dark);
+}
+
+/* ==========================================================
+   GLOBAL UTILITIES
+   ========================================================== */
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: var(--btn-radius);
+  padding: 0.6rem 1.2rem;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--btn-transition),
+              color var(--btn-transition),
+              transform 0.2s ease;
+
+  &:hover {
+    background-color: var(--btn-hover);
+    color: #000;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================
+   CARD STYLES
+   ========================================================== */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s, box-shadow 0.3s;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* ==========================================================
+   NAVBAR
+   ========================================================== */
+.navbar {
+  background: var(--navbar-bg);
+  background-image: var(--navbar-gradient);
+  color: var(--navbar-text);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background 0.5s, color 0.3s, box-shadow 0.3s;
+
+  a {
+    color: var(--navbar-text);
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      color: var(--color-primary-hover);
+    }
+  }
+}
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+  a {
+    color: var(--footer-link);
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--footer-link-hover);
+    }
+  }
 }
